@@ -1,5 +1,10 @@
 document.addEventListener("DOMContentLoaded", function () {
-  const currentPage = window.location.pathname.split("/").pop();
+  let currentPage = window.location.pathname.split("/").pop();
+
+  // ⭐ 修复首页路径
+  if (currentPage === "" || currentPage === "/") {
+    currentPage = "index.html";
+  }
 
   const navHTML = `
     <nav class="nav">
