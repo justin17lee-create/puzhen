@@ -41,7 +41,7 @@ html {
   content: "";
   position: absolute;
   inset: 0;
-  background: rgba(255,255,255,0.05);
+  background: rgba(0,0,0,0.3);
 }
 .hero-content {
   position: relative;
@@ -60,7 +60,7 @@ html {
   font-weight: 600;
   font-size: 96px;
   letter-spacing: 0.04em;
-  color: hsl(213, 30%, 35%);
+  color: white;
   margin: 0 0 16px 0;
   line-height: 1;
 }
@@ -74,7 +74,7 @@ html {
   font-size: 16px;
   letter-spacing: 0.45em;
   text-transform: uppercase;
-  color: hsla(213, 25%, 30%, 0.8);
+  color: rgba(255,255,255,0.8);
 }
 
 /* PORTFOLIO */
