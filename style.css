@@ -135,7 +135,7 @@ h2 {
 /* Film title */
 .film-title {
   font-family: ui-serif, Georgia, Cambria, "Times New Roman", Times, serif;
-  font-size: 16px;
+  font-size: 18px;
   font-weight: 600;
   letter-spacing: 0.1em;
   color: white;
@@ -146,7 +146,7 @@ h2 {
 .film-desc {
   max-width: 580px;
   margin: 0 auto 40px auto;
-  font-size: 12px;
+  font-size: 14px;
   line-height: 1.7;
   font-weight: 300;
   color: rgba(255,255,255,0.38);
