@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>About — Puzhen 樸真</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+  <nav class="nav">
+    <a href="index.html">Home</a>
+    <a href="portfolio.html">Portfolio</a>
+    <a href="about.html" class="active">About</a>
+    <a href="contact.html">Contact</a>
+  </nav>
+
+  <section class="about-page fade-content" id="pageContent">
+
+    <div class="about-container">
+
+      <!-- 左边照片 -->
+      <div class="about-left">
+        <img src="images/me.jpg" alt="Portrait">
+      </div>
+
+      <!-- 右边文字 -->
+      <div class="about-right">
+        <h2>About Me</h2>
+
+        <p>
+          I am a multidisciplinary artist focusing on animation, model making, and visual storytelling.
+          My work explores themes of memory, growth, and emotional transformation through tactile and cinematic forms.
+        </p>
+
+        <p>
+          Based between traditional craft and digital animation, I enjoy building worlds that feel intimate,
+          fragile, and emotionally resonant.
+        </p>
+
+        <p>
+          Currently exploring narrative-driven animation and mixed-media visual storytelling.
+        </p>
+
+      </div>
+
+    </div>
+
+  </section>
+
+  <script>
+    window.addEventListener('load', function() {
+      setTimeout(function() {
+        document.getElementById('pageContent').classList.add('visible');
+      }, 100);
+    });
+  </script>
+
+</body>
+</html>
