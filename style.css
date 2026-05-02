@@ -82,6 +82,17 @@ h2 {
   font-weight: normal;
 }
 
+/* Film title */
+.film-title {
+  text-align: center;
+  font-family: ui-serif, Georgia, Cambria, "Times New Roman", Times, serif;
+  font-size: 36px;
+  font-weight: 600;
+  letter-spacing: 0.1em;
+  color: white;
+  margin: 0 0 24px 0;
+}
+
 /* 视频容器 */
 .video-wrap {
   position: relative;
@@ -99,17 +110,36 @@ h2 {
   border-radius: 4px;
 }
 
-.grid {
+/* Animation 剧照：2列 */
+.grid-2 {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-  gap: 20px;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 16px;
+  max-width: 900px;
+  margin: 0 auto;
 }
-.grid img {
+.grid-2 img {
   width: 100%;
   transition: 0.3s;
 }
-.grid img:hover {
+.grid-2 img:hover {
   transform: scale(1.03);
+  filter: brightness(1.1);
+}
+
+/* Model Making：瀑布流 */
+.masonry {
+  columns: 3;
+  column-gap: 16px;
+}
+.masonry img {
+  width: 100%;
+  display: block;
+  margin-bottom: 16px;
+  break-inside: avoid;
+  transition: 0.3s;
+}
+.masonry img:hover {
   filter: brightness(1.1);
 }
 
@@ -179,5 +209,17 @@ a:hover {
   }
   .portfolio {
     padding: 60px 20px;
+  }
+  .grid-2 {
+    grid-template-columns: 1fr;
+  }
+  .masonry {
+    columns: 2;
+  }
+}
+
+@media (max-width: 480px) {
+  .masonry {
+    columns: 1;
   }
 }
