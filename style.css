@@ -113,13 +113,13 @@ html {
 }
 
 h2 {
-  margin-top: 60px;
-  margin-bottom: 20px;
-  letter-spacing: 2px;
-  font-weight: normal;
-  font-size: 12px;
-  opacity: 0.6;
+  margin-top: 90px;
+  margin-bottom: 25px;
+  font-size: 16px;              /* ✔ 明显变大 */
+  font-weight: 500;
+  letter-spacing: 0.2em;
   text-transform: uppercase;
+  opacity: 0.85;                /* ✔ 更清晰但不抢主标题 */
 }
 
 /* =========================
