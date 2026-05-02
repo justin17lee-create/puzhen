@@ -1,6 +1,6 @@
 body {
   margin: 0;
-  font-family: 'Inter', sans-serif;
+  font-family: "Helvetica Neue", Arial, "PingFang SC", "Hiragino Sans GB", sans-serif;
   background: #111;
   color: white;
 }
@@ -12,45 +12,24 @@ html {
 /* NAV */
 .nav {
   position: fixed;
-  top: 50%;
-  right: 30px;
-  transform: translateY(-50%);
+  top: 30px;
+  right: 40px;
   z-index: 1000;
 
   display: flex;
-  flex-direction: column;
-  gap: 20px;
-
-  padding: 12px 16px;
-  border-radius: 12px;
-
-  background: transparent;
-  backdrop-filter: blur(0px);
-  transition: all 0.3s ease;
-}
-
-.nav.scrolled {
-  background: rgba(255, 255, 255, 0.08);
-  backdrop-filter: blur(10px);
-  border: 1px solid rgba(255,255,255,0.1);
+  gap: 25px;
 }
 
 .nav a {
   color: white;
   text-decoration: none;
-  opacity: 0.5;
   font-size: 14px;
-  letter-spacing: 1px;
+  opacity: 0.6;
   transition: 0.3s;
 }
 
 .nav a:hover {
   opacity: 1;
-}
-
-.nav a.active {
-  opacity: 1;
-  font-weight: bold;
 }
 
 /* HOME */
@@ -67,32 +46,30 @@ html {
   content: "";
   position: absolute;
   inset: 0;
-  background: rgba(0,0,0,0.3);
+  background: rgba(0,0,0,0.25);
 }
 
 .hero h1 {
   position: relative;
   z-index: 1;
-  font-size: 48px;
-  letter-spacing: 2px;
+
+  font-size: 72px;   /* 🔥 放大 */
+  letter-spacing: 3px;
   font-weight: 300;
 
   animation: breathe 8s ease-in-out infinite;
 }
 
-/* 呼吸动画 */
+/* 呼吸动画（很轻） */
 @keyframes breathe {
   0% { transform: scale(1); }
-  50% { transform: scale(1.03); }
+  50% { transform: scale(1.02); }
   100% { transform: scale(1); }
 }
 
 /* 中文 */
 .cn {
-  display: block;
-  font-family: 'ZCOOL XiaoWei', serif;
-  font-size: 34px;
-  margin-top: 12px;
+  margin-left: 12px;
   letter-spacing: 6px;
 }
 
@@ -126,32 +103,16 @@ h2 {
 
 /* CONTACT */
 .contact {
-  position: relative;
   height: 100vh;
+  background: url('images/bg2.jpg') center/cover no-repeat;
   display: flex;
   align-items: center;
   justify-content: center;
-  overflow: hidden;
-}
-
-.contact::before {
-  content: "";
-  position: absolute;
-  inset: 0;
-
-  background: url('images/bg2.jpg') center/cover no-repeat;
-
-  filter: blur(var(--blur, 0px)) brightness(0.6);
-  transform: scale(1.05);
-
-  transition: filter 0.3s ease;
-
-  z-index: 0;
 }
 
 .overlay {
-  position: relative;
-  z-index: 1;
+  background: rgba(0,0,0,0.25);
+  padding: 40px;
   text-align: center;
 }
 
