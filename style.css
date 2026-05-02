@@ -370,3 +370,8 @@ a {
     padding: 100px 20px 80px;
   }
 }
+
+.nav a.active {
+  color: white;
+  border-bottom: 2px solid white;
+}
