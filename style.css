@@ -325,7 +325,7 @@ a {
   gap: 60px;
   max-width: 1100px;
   margin: 0 auto;
-  align-items: center;
+  align-items: flex-start; /* ⭐关键：顶部对齐 */
 }
 
 /* 左边图片 */
@@ -335,21 +335,15 @@ a {
 
 .about-left img {
   width: 100%;
+  max-height: 520px;      /* ⭐控制图片不要太大 */
+  object-fit: cover;      /* ⭐保持比例裁切 */
   display: block;
-  border-radius: 2px;
 }
 
 /* 右边文字 */
 .about-right {
   flex: 1;
-}
-
-.about-right h2 {
-  margin-top: 0;
-  font-size: 18px;
-  letter-spacing: 0.2em;
-  font-weight: 500;
-  opacity: 0.85;
+  padding-top: 0;         /* ⭐防止被挤下去 */
 }
 
 .about-right p {
@@ -357,7 +351,7 @@ a {
   line-height: 1.8;
   color: rgba(255,255,255,0.6);
   margin-bottom: 16px;
-  max-width: 500px;
+  max-width: 520px;
 }
 
 /* RESPONSIVE */
@@ -367,7 +361,7 @@ a {
     gap: 30px;
   }
 
-  .about-right {
-    text-align: left;
+  .about-left img {
+    max-height: none;
   }
 }
