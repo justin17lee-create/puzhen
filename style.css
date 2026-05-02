@@ -335,7 +335,7 @@ a {
 
 .about-left img {
   width: 100%;
-  aspect-ratio: 9 / 16;   /* ⭐适配竖图 */
+  aspect-ratio: 3 / 4;   /* ⭐适配竖图 */
   object-fit: cover;
   display: block;
   max-height: 520px;
