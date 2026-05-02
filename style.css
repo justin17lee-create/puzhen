@@ -7,6 +7,14 @@ body {
 html {
   scroll-behavior: smooth;
 }
+
+/* ── 字体定义 ── */
+.font-display {
+  font-family: "Futura", "Futura PT", "Century Gothic", "Avenir Next", "Trebuchet MS", sans-serif;
+  font-weight: 400;
+  letter-spacing: 0.04em;
+}
+
 /* NAV */
 .nav {
   position: fixed;
@@ -26,6 +34,7 @@ html {
 .nav a:hover {
   opacity: 1;
 }
+
 /* HOME */
 .hero {
   height: 100vh;
@@ -36,12 +45,19 @@ html {
   position: relative;
   cursor: pointer;
 }
+
+/* 文字底部白色雾效 */
 .hero::after {
   content: "";
   position: absolute;
-  inset: 0;
-  background: rgba(255,255,255,0.08);
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: 50%;
+  background: linear-gradient(to top, rgba(255,255,255,0.55) 0%, rgba(255,255,255,0) 100%);
+  z-index: 0;
 }
+
 .hero-content {
   position: relative;
   z-index: 1;
@@ -54,26 +70,33 @@ html {
   opacity: 1;
   transform: translateY(0);
 }
+
+/* 主标题 */
 .hero h1 {
-  font-size: 120px;
-  letter-spacing: 2px;
-  font-weight: 500;
-  font-family: Georgia, "Times New Roman", serif;
-  color: #1a1a2e;
+  font-family: ui-serif, Georgia, Cambria, "Times New Roman", Times, serif;
+  font-weight: 600;
+  font-size: 96px;          /* lg: text-8xl */
+  letter-spacing: 0.04em;
+  color: hsl(213, 16%, 38%); /* text-primary: slate-blue */
   margin: 0 0 20px 0;
+  line-height: 1;
 }
+
 .cn {
   margin-left: 12px;
-  letter-spacing: 6px;
 }
+
+/* 副标题 */
 .hero-sub {
   margin: 0;
-  font-size: 13px;
-  font-weight: 300;
-  letter-spacing: 5px;
-  color: #1a1a2e;
-  opacity: 0.75;
+  font-family: "Futura", "Futura PT", "Century Gothic", "Avenir Next", "Trebuchet MS", sans-serif;
+  font-weight: 400;
+  font-size: 16px;           /* md: text-base */
+  letter-spacing: 0.45em;    /* tracking-[0.45em] */
+  text-transform: uppercase;
+  color: hsla(215, 22%, 18%, 0.75); /* text-ink/75 */
 }
+
 /* PORTFOLIO */
 .portfolio {
   padding: 80px 40px;
@@ -97,6 +120,7 @@ h2 {
   transform: scale(1.03);
   filter: brightness(1.1);
 }
+
 /* CONTACT */
 .contact {
   height: 100vh;
@@ -142,6 +166,7 @@ h2 {
   font-weight: 700;
   letter-spacing: 1px;
 }
+
 /* link */
 a {
   color: white;
@@ -149,4 +174,15 @@ a {
 }
 a:hover {
   text-decoration: underline;
+}
+
+/* 响应式 */
+@media (max-width: 768px) {
+  .hero h1 {
+    font-size: 48px;   /* text-5xl */
+  }
+  .hero-sub {
+    font-size: 14px;   /* text-sm */
+    letter-spacing: 0.3em;
+  }
 }
