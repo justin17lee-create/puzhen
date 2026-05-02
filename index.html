@@ -2,61 +2,111 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <title>Puzhen</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Puzhen 樸真</title>
+
+  <!-- 中文字体 -->
+  <link href="https://fonts.googleapis.com/css2?family=LXGW+WenKai&display=swap" rel="stylesheet">
+
   <link rel="stylesheet" href="style.css">
 </head>
 
 <body>
 
-  <!-- NAVIGATION -->
+  <!-- NAV -->
   <nav class="nav">
-    <a href="#home">Home</a>
-    <a href="#portfolio">Portfolio</a>
-    <a href="#contact">Contact</a>
+    <a href="#home" class="nav-link active">Home</a>
+    <a href="#portfolio" class="nav-link">Portfolio</a>
+    <a href="#contact" class="nav-link">Contact</a>
   </nav>
 
   <!-- HOME -->
-  <section id="home" class="hero">
-    <h1>Puzhen 樸真</h1>
+  <section class="hero" id="home">
+    <h1>
+      Puzhen
+      <span class="cn">樸真</span>
+    </h1>
   </section>
 
   <!-- PORTFOLIO -->
-  <section id="portfolio" class="portfolio">
+  <section class="portfolio" id="portfolio">
 
     <h2>Animation</h2>
     <div class="grid">
-      <img src="images/animation1.png" alt="">
-      <img src="images/animation2.png" alt="">
-      <img src="images/animation3.png" alt="">
-      <img src="images/animation4.png" alt="">
-      <img src="images/animation5.png" alt="">
-      <img src="images/animation6.png" alt="">
+      <img src="images/animation1.png">
+      <img src="images/animation2.png">
+      <img src="images/animation3.png">
+      <img src="images/animation4.png">
+      <img src="images/animation5.png">
+      <img src="images/animation6.png">
     </div>
 
     <h2>Model Making</h2>
     <div class="grid">
-      <img src="images/model2.jpg" alt="">
-      <img src="images/model1.jpg" alt="">
-      <img src="images/model3.jpg" alt="">
-      <img src="images/model5.jpg" alt="">
-      <img src="images/model4.jpg" alt="">
-      <img src="images/model7.jpg" alt="">
-      <img src="images/model6.jpg" alt="">
-      <img src="images/model8.jpg" alt="">
+      <img src="images/model2.jpg">
+      <img src="images/model1.jpg">
+      <img src="images/model3.jpg">
+      <img src="images/model5.jpg">
+      <img src="images/model4.jpg">
+      <img src="images/model7.jpg">
+      <img src="images/model6.jpg">
+      <img src="images/model8.jpg">
     </div>
 
   </section>
 
   <!-- CONTACT -->
-  <section id="contact" class="contact">
+  <section class="contact" id="contact">
     <div class="overlay">
       <h2>Contact</h2>
-      <p><a href="https://www.instagram.com/puzhen.creations/" target="_blank">Instagram</a></p>
+      <p><a href="https://www.instagram.com/puzhen.creations/" target="_blank">@puzhen.creations</a></p>
       <p><a href="mailto:puzhen.art@gmail.com">puzhen.art@gmail.com</a></p>
       <p>+44 7398 869093</p>
     </div>
   </section>
+
+  <!-- JS -->
+  <script>
+    const sections = document.querySelectorAll("section");
+    const navLinks = document.querySelectorAll(".nav-link");
+    const nav = document.querySelector(".nav");
+    const contact = document.querySelector("#contact");
+
+    window.addEventListener("scroll", () => {
+
+      let current = "";
+
+      sections.forEach(section => {
+        const sectionTop = section.offsetTop;
+        if (scrollY >= sectionTop - 200) {
+          current = section.getAttribute("id");
+        }
+      });
+
+      navLinks.forEach(link => {
+        link.classList.remove("active");
+        if (link.getAttribute("href") === "#" + current) {
+          link.classList.add("active");
+        }
+      });
+
+      // 导航模糊
+      if (window.scrollY > 50) {
+        nav.classList.add("scrolled");
+      } else {
+        nav.classList.remove("scrolled");
+      }
+
+      // Contact 模糊渐变
+      const rect = contact.getBoundingClientRect();
+      const windowHeight = window.innerHeight;
+
+      let progress = 1 - rect.top / windowHeight;
+      progress = Math.max(0, Math.min(1, progress));
+
+      const blurValue = progress * 10;
+      contact.style.setProperty("--blur", blurValue + "px");
+    });
+  </script>
 
 </body>
 </html>
