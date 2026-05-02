@@ -62,8 +62,10 @@
   </section>
 
   <script>
-    document.querySelector('.hero').addEventListener('click', function() {
-      document.getElementById('heroContent').classList.add('visible');
+    window.addEventListener('load', function() {
+      setTimeout(function() {
+        document.getElementById('heroContent').classList.add('visible');
+      }, 300);
     });
   </script>
 </body>
