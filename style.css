@@ -266,10 +266,6 @@ a {
   text-decoration: none;
 }
 
-a:hover {
-  text-decoration: underline;
-}
-
 /* RESPONSIVE */
 @media (max-width: 768px) {
 
