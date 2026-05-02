@@ -317,7 +317,7 @@ a {
 }
 
 .about-page {
-  padding: 120px 40px;
+  padding: 160px 40px 120px; /* ⭐整体内容下移 */
 }
 
 .about-container {
@@ -335,10 +335,10 @@ a {
 
 .about-left img {
   width: 100%;
-  aspect-ratio: 3 / 4;   /* ⭐固定3:4比例 */
-  object-fit: cover;     /* ⭐裁切不变形 */
+  aspect-ratio: 9 / 16;   /* ⭐适配竖图 */
+  object-fit: cover;
   display: block;
-  max-height: 500px;     /* 可选：防止过高 */
+  max-height: 520px;
 }
 
 /* 右边文字 */
@@ -348,13 +348,18 @@ a {
 }
 
 .about-right p {
-  font-size: 16px;       /* ⭐字体稍微增大 */
+  font-size: 15px;
   line-height: 1.8;
   color: rgba(255, 255, 255, 0.6);
   margin-bottom: 16px;
   max-width: 520px;
 }
 
+/* 第一段稍微强调（可选） */
+.about-right p:first-child {
+  font-size: 16px;
+  color: rgba(255, 255, 255, 0.75);
+}
 
 /* RESPONSIVE */
 @media (max-width: 768px) {
@@ -368,6 +373,6 @@ a {
   }
 
   .about-page {
-    padding: 80px 20px;
+    padding: 100px 20px 80px;
   }
 }
