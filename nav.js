@@ -4,8 +4,8 @@ document.addEventListener("DOMContentLoaded", function () {
   const navHTML = `
     <nav class="nav">
       <a href="index.html" data-page="index.html">Home</a>
-      <a href="portfolio.html" data-page="portfolio.html">Portfolio</a>
       <a href="about.html" data-page="about.html">About</a>
+      <a href="portfolio.html" data-page="portfolio.html">Portfolio</a>
       <a href="contact.html" data-page="contact.html">Contact</a>
     </nav>
   `;
