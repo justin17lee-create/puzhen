@@ -4,9 +4,6 @@
   <meta charset="UTF-8">
   <title>Puzhen 樸真</title>
 
-  <!-- 字体 -->
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600&family=ZCOOL+XiaoWei&display=swap" rel="stylesheet">
-
   <link rel="stylesheet" href="style.css">
 </head>
 
@@ -14,16 +11,15 @@
 
   <!-- NAV -->
   <nav class="nav">
-    <a href="#home" class="nav-link active">Home</a>
-    <a href="#portfolio" class="nav-link">Portfolio</a>
-    <a href="#contact" class="nav-link">Contact</a>
+    <a href="#home">Home</a>
+    <a href="#portfolio">Portfolio</a>
+    <a href="#contact">Contact</a>
   </nav>
 
   <!-- HOME -->
   <section class="hero" id="home">
     <h1>
-      Puzhen
-      <span class="cn">樸真</span>
+      Puzhen <span class="cn">樸真</span>
     </h1>
   </section>
 
@@ -63,50 +59,6 @@
       <p>+44 7398 869093</p>
     </div>
   </section>
-
-  <!-- JS -->
-  <script>
-    const sections = document.querySelectorAll("section");
-    const navLinks = document.querySelectorAll(".nav-link");
-    const nav = document.querySelector(".nav");
-    const contact = document.querySelector("#contact");
-
-    window.addEventListener("scroll", () => {
-
-      let current = "";
-
-      sections.forEach(section => {
-        const sectionTop = section.offsetTop;
-        if (scrollY >= sectionTop - 200) {
-          current = section.getAttribute("id");
-        }
-      });
-
-      navLinks.forEach(link => {
-        link.classList.remove("active");
-        if (link.getAttribute("href") === "#" + current) {
-          link.classList.add("active");
-        }
-      });
-
-      // 导航模糊
-      if (window.scrollY > 50) {
-        nav.classList.add("scrolled");
-      } else {
-        nav.classList.remove("scrolled");
-      }
-
-      // Contact 模糊渐变
-      const rect = contact.getBoundingClientRect();
-      const windowHeight = window.innerHeight;
-
-      let progress = 1 - rect.top / windowHeight;
-      progress = Math.max(0, Math.min(1, progress));
-
-      const blurValue = progress * 10;
-      contact.style.setProperty("--blur", blurValue + "px");
-    });
-  </script>
 
 </body>
 </html>
