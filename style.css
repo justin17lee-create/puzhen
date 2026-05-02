@@ -36,7 +36,6 @@ html {
   align-items: center;
   justify-content: center;
   position: relative;
-  cursor: pointer;
 }
 .hero::after {
   content: "";
