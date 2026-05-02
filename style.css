@@ -315,3 +315,59 @@ a {
 .model-grid img {
   cursor: pointer;
 }
+
+.about-page {
+  padding: 120px 40px;
+}
+
+.about-container {
+  display: flex;
+  gap: 60px;
+  max-width: 1100px;
+  margin: 0 auto;
+  align-items: center;
+}
+
+/* 左边图片 */
+.about-left {
+  flex: 1;
+}
+
+.about-left img {
+  width: 100%;
+  display: block;
+  border-radius: 2px;
+}
+
+/* 右边文字 */
+.about-right {
+  flex: 1;
+}
+
+.about-right h2 {
+  margin-top: 0;
+  font-size: 18px;
+  letter-spacing: 0.2em;
+  font-weight: 500;
+  opacity: 0.85;
+}
+
+.about-right p {
+  font-size: 14px;
+  line-height: 1.8;
+  color: rgba(255,255,255,0.6);
+  margin-bottom: 16px;
+  max-width: 500px;
+}
+
+/* RESPONSIVE */
+@media (max-width: 768px) {
+  .about-container {
+    flex-direction: column;
+    gap: 30px;
+  }
+
+  .about-right {
+    text-align: left;
+  }
+}
