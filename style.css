@@ -55,9 +55,9 @@ html {
   transform: translateY(0);
 }
 .hero h1 {
-  font-size: 80px;
+  font-size: 120px;
   letter-spacing: 2px;
-  font-weight: 700;
+  font-weight: 500;
   font-family: Georgia, "Times New Roman", serif;
   color: #1a1a2e;
   margin: 0 0 20px 0;
