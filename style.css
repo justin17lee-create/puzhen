@@ -4,22 +4,18 @@ body {
   background: #111;
   color: white;
 }
-
 html {
   scroll-behavior: smooth;
 }
-
 /* NAV */
 .nav {
   position: fixed;
   top: 30px;
   right: 40px;
   z-index: 1000;
-
   display: flex;
   gap: 25px;
 }
-
 .nav a {
   color: white;
   text-decoration: none;
@@ -27,11 +23,9 @@ html {
   opacity: 0.6;
   transition: 0.3s;
 }
-
 .nav a:hover {
   opacity: 1;
 }
-
 /* HOME */
 .hero {
   height: 100vh;
@@ -41,87 +35,82 @@ html {
   justify-content: center;
   position: relative;
 }
-
 .hero::after {
   content: "";
   position: absolute;
   inset: 0;
   background: rgba(0,0,0,0.25);
 }
-
 .hero h1 {
   position: relative;
   z-index: 1;
-
-  font-size: 72px;   /* 🔥 放大 */
+  font-size: 72px;
   letter-spacing: 3px;
-  font-weight: 300;
-
+  font-weight: 700;   /* 加粗 */
   animation: breathe 8s ease-in-out infinite;
 }
-
-/* 呼吸动画（很轻） */
+/* 呼吸动画 */
 @keyframes breathe {
   0% { transform: scale(1); }
   50% { transform: scale(1.02); }
   100% { transform: scale(1); }
 }
-
 /* 中文 */
 .cn {
   margin-left: 12px;
   letter-spacing: 6px;
 }
-
 /* PORTFOLIO */
 .portfolio {
   padding: 80px 40px;
 }
-
 h2 {
   margin-top: 60px;
   margin-bottom: 20px;
   letter-spacing: 2px;
   font-weight: normal;
 }
-
 .grid {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
   gap: 20px;
 }
-
 .grid img {
   width: 100%;
   transition: 0.3s;
 }
-
 .grid img:hover {
   transform: scale(1.03);
   filter: brightness(1.1);
 }
-
 /* CONTACT */
 .contact {
   height: 100vh;
-  background: url('images/bg2.jpg') center/cover no-repeat;
+  position: relative;
   display: flex;
   align-items: center;
   justify-content: center;
+  overflow: hidden;
 }
-
+.contact::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: url('images/bg2.jpg') center/cover no-repeat;
+  filter: blur(8px);
+  transform: scale(1.05);  /* 防止边缘白边 */
+  z-index: 0;
+}
 .overlay {
-  background: rgba(0,0,0,0.25);
-  padding: 40px;
+  position: relative;
+  z-index: 1;
   text-align: center;
 }
-
 /* link */
 a {
   color: white;
   text-decoration: none;
 }
-
 a:hover {
   text-decoration: underline;
 }
