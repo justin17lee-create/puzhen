@@ -317,7 +317,7 @@ a {
 }
 
 .about-page {
-  padding: 180px 40px 120px; /* ⭐整体下移 */
+  padding: 180px 40px 120px; /* ⭐整体内容下移 */
 }
 
 .about-container {
@@ -328,23 +328,20 @@ a {
   align-items: flex-start;
 }
 
-/* 左侧图片 */
+/* 左边图片 */
 .about-left {
   flex: 1;
-  display: flex;
-  justify-content: center;
-  align-items: flex-start;
 }
 
 .about-left img {
   width: 100%;
-  height: auto;         /* ⭐保持原比例 */
-  max-height: 500px;    /* ⭐限制不要过长 */
-  object-fit: contain;  /* ⭐不裁切 */
+  aspect-ratio: 9 / 16;   /* ⭐适配竖图 */
+  object-fit: cover;
   display: block;
+  max-height: 520px;
 }
 
-/* 右侧文字 */
+/* 右边文字 */
 .about-right {
   flex: 1;
   padding-top: 0;
