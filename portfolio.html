@@ -12,7 +12,7 @@
     <a href="portfolio.html">Portfolio</a>
     <a href="contact.html">Contact</a>
   </nav>
-  <section class="portfolio">
+  <section class="portfolio fade-content" id="pageContent">
     <h2>Animation</h2>
     <p class="film-title">Deep End</p>
     <div class="video-wrap">
@@ -32,7 +32,6 @@
       <img src="images/animation5.png" alt="">
       <img src="images/animation6.png" alt="">
     </div>
-
     <h2>Model Making</h2>
     <div class="masonry">
       <img src="images/model1.jpg" alt="">
@@ -45,5 +44,12 @@
       <img src="images/model8.jpg" alt="">
     </div>
   </section>
+  <script>
+    window.addEventListener('load', function() {
+      setTimeout(function() {
+        document.getElementById('pageContent').classList.add('visible');
+      }, 100);
+    });
+  </script>
 </body>
 </html>
