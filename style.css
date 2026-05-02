@@ -138,19 +138,23 @@ h2 {
   filter: brightness(1.1);
 }
 
-/* Model Making：瀑布流 */
+/* Model Making：真正的瀑布流 */
 .masonry {
-  columns: 3;
-  column-gap: 16px;
+  display: flex;
+  gap: 16px;
 }
-.masonry img {
+.masonry-col {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  flex: 1;
+}
+.masonry-col img {
   width: 100%;
   display: block;
-  margin-bottom: 16px;
-  break-inside: avoid;
   transition: 0.3s;
 }
-.masonry img:hover {
+.masonry-col img:hover {
   filter: brightness(1.1);
 }
 
@@ -225,12 +229,6 @@ a:hover {
     grid-template-columns: 1fr;
   }
   .masonry {
-    columns: 2;
-  }
-}
-
-@media (max-width: 480px) {
-  .masonry {
-    columns: 1;
+    flex-direction: column;
   }
 }
