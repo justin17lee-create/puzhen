@@ -31,7 +31,7 @@ html {
   opacity: 1;
 }
 
-/* ✅ 新增：当前页面高亮 */
+/* active nav */
 .nav a.active {
   opacity: 1;
   position: relative;
@@ -62,7 +62,7 @@ html {
 /* HOME */
 .hero {
   height: 100vh;
-  background: url('images/bg1.jpg') center 40% / cover no-repeat;
+  background: url('images/bg1.jpg') center/cover no-repeat;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -117,29 +117,40 @@ h2 {
   margin-bottom: 20px;
   letter-spacing: 2px;
   font-weight: normal;
+  font-size: 12px;
+  opacity: 0.6;
+  text-transform: uppercase;
+}
+
+/* =========================
+   FILM BLOCK（关键修复）
+========================= */
+
+.film-block {
+  text-align: center;
+  max-width: 900px;
+  margin: 0 auto;
 }
 
 /* Film title */
 .film-title {
-  text-align: center;
   font-family: ui-serif, Georgia, Cambria, "Times New Roman", Times, serif;
   font-size: 16px;
   font-weight: 600;
   letter-spacing: 0.1em;
   color: white;
-  margin: 0 0 24px 0;
+  margin: 0 0 12px 0;
 }
 
+/* Film description（修复居中 + 更轻） */
 .film-desc {
-  text-align: center;
-  max-width: 620px;
+  max-width: 580px;
   margin: 0 auto 40px auto;
-  font-size: 12.5px;
+  font-size: 12px;
   line-height: 1.7;
   font-weight: 300;
-  color: rgba(255,255,255,0.5);
+  color: rgba(255,255,255,0.38);
   letter-spacing: 0.4px;
-  font-style: italic;
 }
 
 /* VIDEO */
@@ -255,6 +266,9 @@ a {
   text-decoration: none;
 }
 
+a:hover {
+  text-decoration: underline;
+}
 
 /* RESPONSIVE */
 @media (max-width: 768px) {
