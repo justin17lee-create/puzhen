@@ -43,7 +43,7 @@ html {
   text-align: center;
   opacity: 0;
   transform: translateY(30px);
-  transition: opacity 1s ease, transform 1s ease;
+  transition: opacity 0.5s ease, transform 0.5s ease; /* 1s 改成 0.5s */
 }
 .hero-content.visible {
   opacity: 1;
