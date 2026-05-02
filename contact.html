@@ -12,7 +12,7 @@
     <a href="portfolio.html">Portfolio</a>
     <a href="contact.html">Contact</a>
   </nav>
-  <section class="contact">
+  <section class="contact fade-content" id="pageContent">
     <div class="overlay">
       <div class="contact-item">
         <p class="contact-label">INSTAGRAM</p>
@@ -28,5 +28,12 @@
       </div>
     </div>
   </section>
+  <script>
+    window.addEventListener('load', function() {
+      setTimeout(function() {
+        document.getElementById('pageContent').classList.add('visible');
+      }, 100);
+    });
+  </script>
 </body>
 </html>
