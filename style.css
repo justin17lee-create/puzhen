@@ -25,18 +25,19 @@ html {
   font-size: 14px;
   opacity: 0.6;
   transition: 0.3s;
+  position: relative;
 }
 
 .nav a:hover {
   opacity: 1;
 }
 
-/* active nav */
+/* active nav（只控制状态，不画线） */
 .nav a.active {
   opacity: 1;
-  position: relative;
 }
 
+/* ⭐ 推荐：用伪元素做下划线（唯一一条线） */
 .nav a.active::after {
   content: "";
   position: absolute;
@@ -115,24 +116,20 @@ html {
 h2 {
   margin-top: 90px;
   margin-bottom: 25px;
-  font-size: 16px;              /* ✔ 明显变大 */
+  font-size: 16px;
   font-weight: 500;
   letter-spacing: 0.2em;
   text-transform: uppercase;
-  opacity: 0.85;                /* ✔ 更清晰但不抢主标题 */
+  opacity: 0.85;
 }
 
-/* =========================
-   FILM BLOCK（关键修复）
-========================= */
-
+/* FILM */
 .film-block {
   text-align: center;
   max-width: 900px;
   margin: 0 auto;
 }
 
-/* Film title */
 .film-title {
   font-family: ui-serif, Georgia, Cambria, "Times New Roman", Times, serif;
   font-size: 18px;
@@ -142,7 +139,6 @@ h2 {
   margin: 0 0 12px 0;
 }
 
-/* Film description（修复居中 + 更轻） */
 .film-desc {
   max-width: 580px;
   margin: 0 auto 40px auto;
@@ -150,7 +146,6 @@ h2 {
   line-height: 1.7;
   font-weight: 300;
   color: rgba(255,255,255,0.38);
-  letter-spacing: 0.4px;
 }
 
 /* VIDEO */
@@ -171,26 +166,8 @@ h2 {
   border-radius: 4px;
 }
 
-/* Animation grid */
-.grid-2 {
-  display: grid;
-  grid-template-columns: repeat(2, 1fr);
-  gap: 16px;
-  max-width: 900px;
-  margin: 0 auto;
-}
-
-.grid-2 img {
-  width: 100%;
-  transition: 0.3s;
-}
-
-.grid-2 img:hover {
-  transform: scale(1.03);
-  filter: brightness(1.1);
-}
-
-/* MODEL MAKING */
+/* GRID */
+.grid-2,
 .model-grid {
   display: grid;
   grid-template-columns: repeat(2, 1fr);
@@ -199,10 +176,17 @@ h2 {
   margin: 0 auto;
 }
 
+.grid-2 img,
 .model-grid img {
   width: 100%;
   display: block;
   transition: 0.3s;
+  cursor: pointer;
+}
+
+.grid-2 img:hover {
+  transform: scale(1.03);
+  filter: brightness(1.1);
 }
 
 .model-grid img:hover {
@@ -257,10 +241,46 @@ h2 {
   margin: 0;
   font-size: 22px;
   font-weight: 700;
-  letter-spacing: 1px;
 }
 
-/* link */
+/* ABOUT */
+.about-page {
+  padding: 180px 40px 120px;
+}
+
+.about-container {
+  display: flex;
+  gap: 60px;
+  max-width: 1100px;
+  margin: 0 auto;
+  align-items: flex-start;
+}
+
+.about-left {
+  flex: 1;
+}
+
+.about-left img {
+  width: 100%;
+  aspect-ratio: 3 / 4;
+  object-fit: cover;
+  display: block;
+  max-height: 520px;
+}
+
+.about-right {
+  flex: 1;
+}
+
+.about-right p {
+  font-size: 16px;
+  line-height: 1.8;
+  color: rgba(255,255,255,0.6);
+  margin-bottom: 16px;
+  max-width: 520px;
+}
+
+/* LINKS */
 a {
   color: white;
   text-decoration: none;
@@ -282,15 +302,22 @@ a {
     padding: 80px 20px 60px 20px;
   }
 
-  .grid-2 {
-    grid-template-columns: 1fr;
-  }
-
+  .grid-2,
   .model-grid {
     grid-template-columns: 1fr;
   }
+
+  .about-container {
+    flex-direction: column;
+    gap: 30px;
+  }
+
+  .about-page {
+    padding: 100px 20px 80px;
+  }
 }
 
+/* LIGHTBOX */
 .lightbox {
   position: fixed;
   top: 0;
@@ -308,75 +335,5 @@ a {
   max-width: 90%;
   max-height: 90%;
   box-shadow: 0 0 30px rgba(0,0,0,0.5);
-  transition: transform 0.3s ease; 
-}
-
-.grid-2 img,
-.model-grid img {
-  cursor: pointer;
-}
-
-.about-page {
-  padding: 180px 40px 120px; /* ⭐整体内容下移 */
-}
-
-.about-container {
-  display: flex;
-  gap: 60px;
-  max-width: 1100px;
-  margin: 0 auto;
-  align-items: flex-start;
-}
-
-/* 左边图片 */
-.about-left {
-  flex: 1;
-}
-
-.about-left img {
-  width: 100%;
-  aspect-ratio: 3 / 4;   /* ⭐适配竖图 */
-  object-fit: cover;
-  display: block;
-  max-height: 520px;
-}
-
-/* 右边文字 */
-.about-right {
-  flex: 1;
-  padding-top: 0;
-}
-
-.about-right p {
-  font-size: 16px;
-  line-height: 1.8;
-  color: rgba(255, 255, 255, 0.6);
-  margin-bottom: 16px;
-  max-width: 520px;
-}
-
-/* RESPONSIVE */
-@media (max-width: 768px) {
-  .about-container {
-    flex-direction: column;
-    gap: 30px;
-  }
-
-  .about-left img {
-    max-height: none;
-  }
-
-  .about-page {
-    padding: 100px 20px 80px;
-  }
-}
-
-.nav a {
-  text-decoration: none;
-  border-bottom: none;
-}
-
-.nav a.active {
-  color: white;
-  border-bottom: 2px solid white;
+  transition: transform 0.3s ease;
 }
