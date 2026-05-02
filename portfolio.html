@@ -9,21 +9,21 @@
 
 <body>
   <nav class="nav">
-  <a href="index.html">Home</a>
-  <a href="portfolio.html" class="active">Portfolio</a>
-  <a href="contact.html">Contact</a>
+    <a href="index.html">Home</a>
+    <a href="portfolio.html" class="active">Portfolio</a>
+    <a href="contact.html">Contact</a>
   </nav>
 
   <section class="portfolio fade-content" id="pageContent">
 
     <h2>Animation</h2>
 
-<div class="film-block">
-  <p class="film-title">Deep End (2026)</p>
-  <p class="film-desc">
-    A shy girl overcomes her fear of swimming - and of connection - when she forms a magical summer bond with a bold classmate in the deep end of the pool.
-  </p>
-</div>
+    <div class="film-block">
+      <p class="film-title">Deep End (2026)</p>
+      <p class="film-desc">
+        A shy girl overcomes her fear of swimming - and of connection - when she forms a magical summer bond with a bold classmate in the deep end of the pool.
+      </p>
+    </div>
 
     <div class="video-wrap">
       <iframe
@@ -46,7 +46,6 @@
 
     <h2>Model Making</h2>
 
-    <!-- ✅ 改成稳定两列顺序排列 -->
     <div class="model-grid">
       <img src="images/model1.jpg" alt="">
       <img src="images/model2.jpg" alt="">
@@ -64,6 +63,7 @@
 
   </section>
 
+  <!-- 页面淡入 -->
   <script>
     window.addEventListener('load', function() {
       setTimeout(function() {
@@ -71,5 +71,28 @@
       }, 100);
     });
   </script>
+
+  <!-- ✅ Lightbox（已整合完成） -->
+  <div class="lightbox" id="lightbox">
+    <img id="lightbox-img" alt="">
+  </div>
+
+  <script>
+    const images = document.querySelectorAll('.model-grid img, .grid-2 img');
+    const lightbox = document.getElementById('lightbox');
+    const lightboxImg = document.getElementById('lightbox-img');
+
+    images.forEach(img => {
+      img.addEventListener('click', () => {
+        lightbox.style.display = 'flex';
+        lightboxImg.src = img.src;
+      });
+    });
+
+    lightbox.addEventListener('click', () => {
+      lightbox.style.display = 'none';
+    });
+  </script>
+
 </body>
 </html>
