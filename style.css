@@ -1,6 +1,6 @@
 body {
   margin: 0;
-  font-family: "Helvetica Neue", Arial, sans-serif;
+  font-family: 'Inter', sans-serif;
   background: #111;
   color: white;
 }
@@ -75,15 +75,25 @@ html {
   z-index: 1;
   font-size: 48px;
   letter-spacing: 2px;
+  font-weight: 300;
+
+  animation: breathe 8s ease-in-out infinite;
 }
 
-/* 中文字体 */
+/* 呼吸动画 */
+@keyframes breathe {
+  0% { transform: scale(1); }
+  50% { transform: scale(1.03); }
+  100% { transform: scale(1); }
+}
+
+/* 中文 */
 .cn {
   display: block;
-  font-family: 'LXGW WenKai', serif;
-  font-size: 36px;
-  margin-top: 10px;
-  letter-spacing: 4px;
+  font-family: 'ZCOOL XiaoWei', serif;
+  font-size: 34px;
+  margin-top: 12px;
+  letter-spacing: 6px;
 }
 
 /* PORTFOLIO */
