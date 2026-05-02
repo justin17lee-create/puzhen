@@ -43,7 +43,7 @@ html {
   text-align: center;
   opacity: 0;
   transform: translateY(30px);
-  transition: opacity 0.5s ease, transform 0.5s ease; /* 1s 改成 0.5s */
+  transition: opacity 0.5s ease, transform 0.5s ease;
 }
 .hero-content.visible {
   opacity: 1;
@@ -73,7 +73,7 @@ html {
 
 /* PORTFOLIO */
 .portfolio {
-  padding: 80px 40px;
+  padding: 100px 40px 80px 40px;
 }
 h2 {
   margin-top: 60px;
@@ -208,7 +208,7 @@ a:hover {
     letter-spacing: 0.3em;
   }
   .portfolio {
-    padding: 60px 20px;
+    padding: 80px 20px 60px 20px;
   }
   .grid-2 {
     grid-template-columns: 1fr;
