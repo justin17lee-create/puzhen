@@ -184,29 +184,23 @@ h2 {
   filter: brightness(1.1);
 }
 
-/* MODEL MAKING：JS 瀑布流 */
-.masonry-wrap {
-  display: flex;
+/* MODEL MAKING：2列网格 */
+.model-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
   gap: 16px;
   max-width: 900px;
   margin: 0 auto;
 }
 
-.masonry-col {
-  display: flex;
-  flex-direction: column;
-  gap: 16px;
-  flex: 1;
-}
-
-.masonry-col img {
+.model-grid img {
   width: 100%;
   display: block;
   cursor: pointer;
   transition: 0.3s;
 }
 
-.masonry-col img:hover {
+.model-grid img:hover {
   filter: brightness(1.1);
 }
 
@@ -373,16 +367,9 @@ a {
     padding: 80px 20px 60px 20px;
   }
 
-  .grid-2 {
+  .grid-2,
+  .model-grid {
     grid-template-columns: 1fr;
-  }
-
-  .masonry-wrap {
-    gap: 10px;
-  }
-
-  .masonry-col {
-    gap: 10px;
   }
 
   .about-container {
