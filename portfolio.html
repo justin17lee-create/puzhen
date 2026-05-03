@@ -5,21 +5,17 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Portfolio — Puzhen 樸真</title>
   <link rel="stylesheet" href="style.css">
+  <script src="nav.js" defer></script>
 </head>
-<script src="nav.js"></script>
 <body>
-
   <section class="portfolio fade-content" id="pageContent">
-
     <h2>Animation</h2>
-
     <div class="film-block">
       <p class="film-title">Deep End (2026)</p>
       <p class="film-desc">
         A shy girl overcomes her fear of swimming - and of connection - when she forms a magical summer bond with a bold classmate in the deep end of the pool.
       </p>
     </div>
-
     <div class="video-wrap">
       <iframe
         src="https://www.youtube.com/embed/1JIyGr_uoHA"
@@ -29,7 +25,6 @@
         allowfullscreen>
       </iframe>
     </div>
-
     <div class="grid-2">
       <img src="images/animation1.png" alt="">
       <img src="images/animation2.png" alt="">
@@ -40,7 +35,6 @@
     </div>
 
     <h2>Model Making</h2>
-
     <div class="model-grid">
       <img src="images/model1.jpg" alt="">
       <img src="images/model2.jpg" alt="">
@@ -55,39 +49,86 @@
       <img src="images/model11.jpg" alt="">
       <img src="images/model12.jpg" alt="">
     </div>
-
   </section>
 
-  <!-- 页面淡入 -->
-  <script>
-    window.addEventListener('load', function() {
-      setTimeout(function() {
-        document.getElementById('pageContent').classList.add('visible');
-      }, 100);
-    });
-  </script>
-
-  <!-- ✅ Lightbox（已整合完成） -->
+  <!-- Lightbox -->
   <div class="lightbox" id="lightbox">
+    <button class="lb-btn lb-prev" id="lbPrev">&#8592;</button>
     <img id="lightbox-img" alt="">
+    <button class="lb-btn lb-next" id="lbNext">&#8594;</button>
   </div>
 
   <script>
-    const images = document.querySelectorAll('.model-grid img, .grid-2 img');
+    // 页面淡入
+    window.addEventListener('load', function () {
+      setTimeout(function () {
+        document.getElementById('pageContent').classList.add('visible');
+      }, 100);
+    });
+
+    // Lightbox
+    const allImages = Array.from(document.querySelectorAll('.grid-2 img, .model-grid img'));
     const lightbox = document.getElementById('lightbox');
     const lightboxImg = document.getElementById('lightbox-img');
+    const lbPrev = document.getElementById('lbPrev');
+    const lbNext = document.getElementById('lbNext');
+    let currentIndex = 0;
 
-    images.forEach(img => {
-      img.addEventListener('click', () => {
-        lightbox.style.display = 'flex';
-        lightboxImg.src = img.src;
+    function openLightbox(index) {
+      currentIndex = index;
+      lightboxImg.src = allImages[currentIndex].src;
+      lightbox.style.display = 'flex';
+      requestAnimationFrame(() => {
+        requestAnimationFrame(() => {
+          lightbox.classList.add('open');
+        });
       });
+    }
+
+    function closeLightbox() {
+      lightbox.classList.remove('open');
+      setTimeout(() => {
+        lightbox.style.display = 'none';
+      }, 300);
+    }
+
+    function showPrev() {
+      currentIndex = (currentIndex - 1 + allImages.length) % allImages.length;
+      lightboxImg.src = allImages[currentIndex].src;
+    }
+
+    function showNext() {
+      currentIndex = (currentIndex + 1) % allImages.length;
+      lightboxImg.src = allImages[currentIndex].src;
+    }
+
+    allImages.forEach((img, index) => {
+      img.addEventListener('click', () => openLightbox(index));
     });
 
-    lightbox.addEventListener('click', () => {
-      lightbox.style.display = 'none';
+    lightbox.addEventListener('click', (e) => {
+      if (e.target === lightbox || e.target === lightboxImg) {
+        closeLightbox();
+      }
+    });
+
+    lbPrev.addEventListener('click', (e) => {
+      e.stopPropagation();
+      showPrev();
+    });
+
+    lbNext.addEventListener('click', (e) => {
+      e.stopPropagation();
+      showNext();
+    });
+
+    document.addEventListener('keydown', (e) => {
+      if (lightbox.style.display === 'flex') {
+        if (e.key === 'ArrowLeft') showPrev();
+        if (e.key === 'ArrowRight') showNext();
+        if (e.key === 'Escape') closeLightbox();
+      }
     });
   </script>
-
 </body>
 </html>
