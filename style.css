@@ -307,7 +307,7 @@ a {
   object-fit: contain;
   border-radius: 4px;
   transform: scale(0.95);
-  transition: transform 0.3s ease;
+  transition: transform 0.3s ease, opacity 0.2s ease; /* 加上 opacity */
 }
 
 .lightbox.open img {
