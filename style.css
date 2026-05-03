@@ -297,7 +297,7 @@ a {
   text-decoration: none;
 }
 
-/* LIGHTBOX — 电脑端 */
+/* LIGHTBOX */
 .lightbox {
   position: fixed;
   top: 0;
@@ -306,6 +306,7 @@ a {
   height: 100%;
   background: rgba(0,0,0,0.92);
   display: none;
+  flex-direction: row;
   align-items: center;
   justify-content: center;
   z-index: 9999;
@@ -335,6 +336,7 @@ a {
   transform: scale(1);
 }
 
+/* 电脑端左右箭头 */
 .lb-btn {
   background: none;
   border: none;
@@ -350,6 +352,11 @@ a {
 
 .lb-btn:hover {
   opacity: 1;
+}
+
+/* 手机端底部箭头：默认隐藏 */
+.lb-mobile-controls {
+  display: none;
 }
 
 /* RESPONSIVE */
@@ -381,24 +388,47 @@ a {
     padding: 100px 20px 80px;
   }
 
-  /* 手机端 lightbox 全屏 */
+  /* 手机端 lightbox 全屏竖排 */
   .lightbox {
+    flex-direction: column;
     padding: 0;
     gap: 0;
     background: black;
+    justify-content: center;
   }
 
   .lightbox img {
     width: 100vw;
-    height: 100vh;
     max-width: 100vw;
-    max-height: 100vh;
+    max-height: 80vh;
     object-fit: contain;
     border-radius: 0;
   }
 
-  /* 手机端隐藏箭头 */
-  .lb-btn {
+  /* 手机端隐藏左右箭头 */
+  .desktop-only {
     display: none;
+  }
+
+  /* 手机端显示底部箭头 */
+  .lb-mobile-controls {
+    display: flex;
+    gap: 40px;
+    margin-top: 20px;
+  }
+
+  .lb-btn-mobile {
+    background: none;
+    border: none;
+    color: white;
+    font-size: 24px;
+    cursor: pointer;
+    opacity: 0.7;
+    padding: 10px 20px;
+    user-select: none;
+  }
+
+  .lb-btn-mobile:active {
+    opacity: 1;
   }
 }
