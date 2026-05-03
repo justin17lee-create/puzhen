@@ -92,14 +92,24 @@
       }, 300);
     }
 
+    // 切换图片时淡出再淡入
+    function switchImage(newIndex) {
+      lightboxImg.style.opacity = '0';
+      lightboxImg.style.transform = 'scale(0.97)';
+      setTimeout(() => {
+        currentIndex = newIndex;
+        lightboxImg.src = allImages[currentIndex].src;
+        lightboxImg.style.opacity = '1';
+        lightboxImg.style.transform = 'scale(1)';
+      }, 200);
+    }
+
     function showPrev() {
-      currentIndex = (currentIndex - 1 + allImages.length) % allImages.length;
-      lightboxImg.src = allImages[currentIndex].src;
+      switchImage((currentIndex - 1 + allImages.length) % allImages.length);
     }
 
     function showNext() {
-      currentIndex = (currentIndex + 1) % allImages.length;
-      lightboxImg.src = allImages[currentIndex].src;
+      switchImage((currentIndex + 1) % allImages.length);
     }
 
     allImages.forEach((img, index) => {
