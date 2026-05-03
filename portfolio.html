@@ -92,7 +92,6 @@
       }, 300);
     }
 
-    // 切换图片时淡出再淡入
     function switchImage(newIndex) {
       lightboxImg.style.opacity = '0';
       lightboxImg.style.transform = 'scale(0.97)';
@@ -116,12 +115,14 @@
       img.addEventListener('click', () => openLightbox(index));
     });
 
+    // 点击背景或图片关闭（电脑端）
     lightbox.addEventListener('click', (e) => {
-      if (e.target === lightbox || e.target === lightboxImg) {
+      if (e.target === lightbox) {
         closeLightbox();
       }
     });
 
+    // 箭头按钮（电脑端）
     lbPrev.addEventListener('click', (e) => {
       e.stopPropagation();
       showPrev();
@@ -132,6 +133,7 @@
       showNext();
     });
 
+    // 键盘（电脑端）
     document.addEventListener('keydown', (e) => {
       if (lightbox.style.display === 'flex') {
         if (e.key === 'ArrowLeft') showPrev();
@@ -139,6 +141,31 @@
         if (e.key === 'Escape') closeLightbox();
       }
     });
+
+    // 触摸滑动（手机端）
+    let touchStartX = 0;
+    let touchEndX = 0;
+
+    lightbox.addEventListener('touchstart', (e) => {
+      touchStartX = e.changedTouches[0].screenX;
+    }, { passive: true });
+
+    lightbox.addEventListener('touchend', (e) => {
+      touchEndX = e.changedTouches[0].screenX;
+      const diff = touchStartX - touchEndX;
+
+      if (Math.abs(diff) > 50) {
+        // 滑动距离超过50px才触发
+        if (diff > 0) {
+          showNext(); // 左滑 → 下一张
+        } else {
+          showPrev(); // 右滑 → 上一张
+        }
+      } else {
+        // 轻点关闭
+        closeLightbox();
+      }
+    }, { passive: true });
   </script>
 </body>
 </html>
