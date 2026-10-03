@@ -603,3 +603,21 @@ a {
 .gallery-arrow-right {
   right: 0;
 }
+
+@media (max-width: 768px) {
+
+  .hero {
+    width: 100%;
+    height: auto;
+    aspect-ratio: auto;
+  }
+
+  .hero-bg {
+    position: relative;
+    width: 100%;
+    height: auto;
+    display: block;
+    object-fit: contain;
+  }
+
+}
