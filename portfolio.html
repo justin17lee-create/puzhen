@@ -515,31 +515,49 @@
 
     /* 键盘 */
 
-    document.addEventListener('keydown', (e) => {
+   document.addEventListener('keydown', (e) => {
 
-      if (lightbox.style.display === 'flex') {
+  /* Lightbox 打开时 */
+  if (lightbox.style.display === 'flex') {
 
-        if (e.key === 'ArrowLeft') {
+    if (e.key === 'ArrowLeft') {
+      showPrev();
+    }
 
-          showPrev();
+    if (e.key === 'ArrowRight') {
+      showNext();
+    }
 
-        }
+    if (e.key === 'Escape') {
+      closeLightbox();
+    }
 
-        if (e.key === 'ArrowRight') {
+    return;
+  }
 
-          showNext();
 
-        }
+  /* Gallery 缩略图 */
+  if (e.key === 'ArrowUp') {
 
-        if (e.key === 'Escape') {
+    e.preventDefault();
 
-          closeLightbox();
+    showGalleryImage(
+      currentGalleryIndex - 1
+    );
 
-        }
+  }
 
-      }
+  if (e.key === 'ArrowDown') {
 
-    });
+    e.preventDefault();
+
+    showGalleryImage(
+      currentGalleryIndex + 1
+    );
+
+  }
+
+});
 
   </script>
 
