@@ -218,7 +218,7 @@ h2 {
   content: "";
   position: absolute;
   inset: 0;
-  background: url('images/bg2.jpg') center/cover no-repeat;
+  background: url('images/bg2.webp') center/cover no-repeat;
   filter: blur(4px);
   transform: scale(1.05);
   z-index: 0;
