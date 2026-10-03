@@ -1,26 +1,20 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-
 <!-- Google tag (gtag.js) -->
 <script async src="https://www.googletagmanager.com/gtag/js?id=G-HTHR7Z3DQX"></script>
 <script>
   window.dataLayer = window.dataLayer || [];
   function gtag(){dataLayer.push(arguments);}
-
   gtag('js', new Date());
+
   gtag('config', 'G-HTHR7Z3DQX');
 </script>
-
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-<title>Portfolio — Puzhen 樸真</title>
-
-<link rel="stylesheet" href="style.css">
-
-<script src="nav.js" defer></script>
-
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Portfolio — Puzhen 樸真</title>
+  <link rel="stylesheet" href="style.css">
+  <script src="nav.js" defer></script>
 </head>
 
 <body>
@@ -30,18 +24,14 @@
     <h2>Animation</h2>
 
     <div class="film-block">
-
       <p class="film-title">Deep End (2026)</p>
 
       <p class="film-desc">
         One summer in early-2000s China, a shy preteen girl confronts her fear of water — and human connection — when she forms an unexpected, magical bond in the deep end of the pool.
       </p>
-
     </div>
 
-
     <div class="video-wrap">
-
       <iframe
         src="https://www.youtube.com/embed/1JIyGr_uoHA"
         title="Deep End - Film Trailer"
@@ -49,7 +39,6 @@
         allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
         allowfullscreen>
       </iframe>
-
     </div>
 
 
@@ -66,15 +55,13 @@
 
         <button
           class="gallery-arrow gallery-arrow-left"
-          id="gallery-prev"
-          aria-label="Previous image">
+          id="gallery-prev">
           &#8592;
         </button>
 
         <button
           class="gallery-arrow gallery-arrow-right"
-          id="gallery-next"
-          aria-label="Next image">
+          id="gallery-next">
           &#8594;
         </button>
 
@@ -86,74 +73,43 @@
         <button
           class="gallery-thumb active"
           data-image="images/animation1.png">
-
-          <img
-            src="images/animation1.png"
-            alt="Deep End">
-
+          <img src="images/animation1.png" alt="Deep End">
         </button>
-
 
         <button
           class="gallery-thumb"
           data-image="images/animation2.png">
-
-          <img
-            src="images/animation2.png"
-            alt="Deep End">
-
+          <img src="images/animation2.png" alt="Deep End">
         </button>
-
 
         <button
           class="gallery-thumb"
           data-image="images/animation3.png">
-
-          <img
-            src="images/animation3.png"
-            alt="Deep End">
-
+          <img src="images/animation3.png" alt="Deep End">
         </button>
-
 
         <button
           class="gallery-thumb"
           data-image="images/animation4.png">
-
-          <img
-            src="images/animation4.png"
-            alt="Deep End">
-
+          <img src="images/animation4.png" alt="Deep End">
         </button>
-
 
         <button
           class="gallery-thumb"
           data-image="images/animation5.png">
-
-          <img
-            src="images/animation5.png"
-            alt="Deep End">
-
+          <img src="images/animation5.png" alt="Deep End">
         </button>
-
 
         <button
           class="gallery-thumb"
           data-image="images/animation6.png">
-
-          <img
-            src="images/animation6.png"
-            alt="Deep End">
-
+          <img src="images/animation6.png" alt="Deep End">
         </button>
 
       </div>
 
     </div>
 
-
-    <!-- Model Making -->
 
     <h2>Model Making</h2>
 
@@ -181,19 +137,17 @@
 
   <div class="lightbox" id="lightbox">
 
+    <!-- 电脑端左右箭头 -->
+
     <button
       class="lb-btn lb-prev desktop-only"
-      id="lbPrev">
-      &#8592;
-    </button>
+      id="lbPrev">&#8592;</button>
 
     <img id="lightbox-img" alt="">
 
     <button
       class="lb-btn lb-next desktop-only"
-      id="lbNext">
-      &#8594;
-    </button>
+      id="lbNext">&#8594;</button>
 
 
     <!-- 手机端底部箭头 -->
@@ -202,15 +156,11 @@
 
       <button
         class="lb-btn-mobile"
-        id="lbPrevMobile">
-        &#8592;
-      </button>
+        id="lbPrevMobile">&#8592;</button>
 
       <button
         class="lb-btn-mobile"
-        id="lbNextMobile">
-        &#8594;
-      </button>
+        id="lbNextMobile">&#8594;</button>
 
     </div>
 
@@ -238,7 +188,6 @@
 
     /* =========================
        Deep End Gallery
-       Only controls animation1-6
     ========================= */
 
     const galleryMainImg =
@@ -255,21 +204,22 @@
     const galleryNext =
       document.getElementById("gallery-next");
 
-
     let currentGalleryIndex = 0;
 
 
     function showGalleryImage(index) {
 
-      // 循环限制在 Gallery 的 6 张图片内
       if (index < 0) {
+
         index = galleryThumbs.length - 1;
+
       }
 
       if (index >= galleryThumbs.length) {
-        index = 0;
-      }
 
+        index = 0;
+
+      }
 
       const thumb =
         galleryThumbs[index];
@@ -278,7 +228,6 @@
         thumb.dataset.image;
 
 
-      // 图片淡出
       galleryMainImg.style.opacity = "0";
 
 
@@ -291,7 +240,6 @@
       }, 150);
 
 
-      // 更新 active thumbnail
       galleryThumbs.forEach(item => {
 
         item.classList.remove("active");
@@ -301,14 +249,10 @@
 
       thumb.classList.add("active");
 
-
-      // 记住当前 Gallery 图片
       currentGalleryIndex = index;
 
     }
 
-
-    // 点击缩略图
 
     galleryThumbs.forEach((thumb, index) => {
 
@@ -323,11 +267,10 @@
     });
 
 
-    // Gallery 左箭头
-
     galleryPrev.addEventListener("click", function (e) {
 
       e.preventDefault();
+
       e.stopPropagation();
 
       showGalleryImage(
@@ -337,11 +280,10 @@
     });
 
 
-    // Gallery 右箭头
-
     galleryNext.addEventListener("click", function (e) {
 
       e.preventDefault();
+
       e.stopPropagation();
 
       showGalleryImage(
@@ -353,7 +295,6 @@
 
     /* =========================
        Lightbox
-       Includes Gallery + Model Making
     ========================= */
 
     const allImages = Array.from(
@@ -393,7 +334,6 @@
         allImages[currentIndex].src;
 
       lightbox.style.display = 'flex';
-
 
       requestAnimationFrame(() => {
 
@@ -466,8 +406,6 @@
     }
 
 
-    /* 点击 Gallery 大图 / Model Making 图片 */
-
     allImages.forEach((img, index) => {
 
       img.addEventListener('click', () => {
@@ -479,8 +417,6 @@
     });
 
 
-    /* 点击 Lightbox 背景关闭 */
-
     lightbox.addEventListener('click', (e) => {
 
       if (e.target === lightbox) {
@@ -491,8 +427,6 @@
 
     });
 
-
-    /* Lightbox 电脑端左右按钮 */
 
     lbPrev.addEventListener('click', (e) => {
 
@@ -512,8 +446,6 @@
     });
 
 
-    /* Lightbox 手机端左右按钮 */
-
     lbPrevMobile.addEventListener('click', (e) => {
 
       e.stopPropagation();
@@ -531,8 +463,6 @@
 
     });
 
-
-    /* 键盘操作 */
 
     document.addEventListener('keydown', (e) => {
 
