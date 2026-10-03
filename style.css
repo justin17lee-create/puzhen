@@ -588,3 +588,50 @@ a {
 .gallery-arrow-right {
   right: 0;
 }
+
+/* MOBILE PORTFOLIO GALLERY */
+@media (max-width: 768px) {
+
+  .image-gallery {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    max-width: 100%;
+    margin: 30px 0 0;
+    gap: 12px;
+    box-sizing: border-box;
+  }
+
+  .gallery-main {
+    width: 100%;
+    max-width: 100%;
+    aspect-ratio: 1.85 / 1;
+    box-sizing: border-box;
+  }
+
+  .gallery-main img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+
+  .gallery-thumbs {
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+    height: auto;
+    gap: 8px;
+    overflow-x: auto;
+    overflow-y: hidden;
+    box-sizing: border-box;
+  }
+
+  .gallery-thumb {
+    width: 60px;
+    min-width: 60px;
+    max-width: 60px;
+    height: 60px;
+    flex: 0 0 60px;
+  }
+
+}
