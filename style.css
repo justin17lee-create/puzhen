@@ -604,34 +604,6 @@ a {
   right: 0;
 }
 
-@media (max-width: 768px) {
-
-  .hero {
-    position: relative;
-    width: 100%;
-    height: auto;
-    aspect-ratio: auto;
-    overflow: visible;
-  }
-
-  .hero-bg {
-    position: relative;
-    width: 100%;
-    height: auto;
-    display: block;
-    object-fit: contain;
-  }
-
-  .hero-content {
-    position: absolute;
-    top: 25%;
-    left: 50%;
-    width: 100%;
-    transform: translate(-50%, calc(-50% + 30px));
-  }
-
-  .hero-content.visible {
-    transform: translate(-50%, -50%);
   }
 
 }
