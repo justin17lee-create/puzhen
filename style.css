@@ -384,12 +384,19 @@ a {
 /* RESPONSIVE */
 @media (max-width: 768px) {
 
+  /* HOME */
   .hero h1 {
-    font-size: 32px;
+    font-size: 32px !important;
+    letter-spacing: 0.03em;
+    margin-bottom: 10px;
+  }
+
+  .cn {
+    margin-left: 6px;
   }
 
   .hero-sub {
-    font-size: 9px;
+    font-size: 9px !important;
     letter-spacing: 0.22em;
   }
 
@@ -602,8 +609,4 @@ a {
 
 .gallery-arrow-right {
   right: 0;
-}
-
-  }
-
 }
