@@ -385,12 +385,12 @@ a {
 @media (max-width: 768px) {
 
   .hero h1 {
-    font-size: 48px;
+    font-size: 32px;
   }
 
   .hero-sub {
-    font-size: 13px;
-    letter-spacing: 0.3em;
+    font-size: 9px;
+    letter-spacing: 0.22em;
   }
 
   .portfolio {
