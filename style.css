@@ -436,7 +436,7 @@ a {
 /* DEEP END GALLERY */
 .image-gallery {
   display: grid;
-  grid-template-columns: 1fr 110px;
+  grid-template-columns: minmax(0, 1fr) 110px;
   gap: 16px;
   width: 100%;
   max-width: 765px;
@@ -446,7 +446,7 @@ a {
 
 .gallery-main {
   width: 100%;
-  height: 720px;
+  aspect-ratio: 1.85 / 1;
   overflow: hidden;
 }
 
