@@ -264,19 +264,23 @@ h2 {
   gap: 60px;
   max-width: 1100px;
   margin: 0 auto;
-  align-items: flex-start;
+  align-items: stretch;
 }
 
 .about-left {
   flex: 1;
+  display: flex;
+  align-items: stretch;
+  overflow: hidden;
 }
 
 .about-left img {
   width: 100%;
-  aspect-ratio: 3 / 4;
+  height: 100%;
   object-fit: cover;
+  object-position: center top;
   display: block;
-  max-height: 520px;
+  max-height: none;
 }
 
 .about-right {
@@ -289,6 +293,10 @@ h2 {
   color: rgba(255,255,255,0.6);
   margin-bottom: 16px;
   max-width: 520px;
+}
+
+.about-right .chinese {
+  margin-top: 2.5em;
 }
 
 /* LINKS */
@@ -382,6 +390,18 @@ a {
   .about-container {
     flex-direction: column;
     gap: 30px;
+  }
+
+  .about-left {
+    display: block;
+  }
+
+  .about-left img {
+    width: 100%;
+    height: auto;
+    aspect-ratio: 3 / 4;
+    object-fit: cover;
+    max-height: 520px;
   }
 
   .about-page {
