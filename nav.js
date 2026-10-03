@@ -51,5 +51,40 @@ document.addEventListener("DOMContentLoaded", function () {
     });
   }
 
+  const galleryPrev = document.getElementById("gallery-prev");
+const galleryNext = document.getElementById("gallery-next");
+
+let currentGalleryIndex = 0;
+
+galleryThumbs.forEach((thumb, index) => {
+  thumb.addEventListener("click", function () {
+    currentGalleryIndex = index;
+  });
+});
+
+function showGalleryImage(index) {
+  if (index < 0) {
+    index = galleryThumbs.length - 1;
+  }
+
+  if (index >= galleryThumbs.length) {
+    index = 0;
+  }
+
+  currentGalleryIndex = index;
+
+  galleryThumbs[index].click();
+}
+
+galleryPrev.addEventListener("click", function (e) {
+  e.stopPropagation();
+  showGalleryImage(currentGalleryIndex - 1);
+});
+
+galleryNext.addEventListener("click", function (e) {
+  e.stopPropagation();
+  showGalleryImage(currentGalleryIndex + 1);
+});
+
 });
 </script>
