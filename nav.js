@@ -1,3 +1,4 @@
+<script>
 document.addEventListener("DOMContentLoaded", function () {
   let currentPage = window.location.pathname.split("/").pop();
 
@@ -23,4 +24,32 @@ document.addEventListener("DOMContentLoaded", function () {
       link.classList.add("active");
     }
   });
+
+
+  // ⭐ Deep End 图片 Gallery
+  const galleryMainImg = document.getElementById("gallery-main-img");
+  const galleryThumbs = document.querySelectorAll(".gallery-thumb");
+
+  if (galleryMainImg && galleryThumbs.length) {
+    galleryThumbs.forEach(thumb => {
+      thumb.addEventListener("click", function () {
+        const newImage = this.dataset.image;
+
+        galleryMainImg.style.opacity = "0";
+
+        setTimeout(() => {
+          galleryMainImg.src = newImage;
+          galleryMainImg.style.opacity = "1";
+        }, 150);
+
+        galleryThumbs.forEach(item => {
+          item.classList.remove("active");
+        });
+
+        this.classList.add("active");
+      });
+    });
+  }
+
 });
+</script>
