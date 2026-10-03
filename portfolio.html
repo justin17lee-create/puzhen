@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+
 <!-- Google tag (gtag.js) -->
 <script async src="https://www.googletagmanager.com/gtag/js?id=G-HTHR7Z3DQX"></script>
 <script>
@@ -10,21 +11,33 @@
 
   gtag('config', 'G-HTHR7Z3DQX');
 </script>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Portfolio — Puzhen 樸真</title>
-  <link rel="stylesheet" href="style.css">
-  <script src="nav.js" defer></script>
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Portfolio — Puzhen 樸真</title>
+
+<link rel="stylesheet" href="style.css">
+
+<script src="nav.js" defer></script>
+
 </head>
+
 <body>
+
   <section class="portfolio fade-content" id="pageContent">
+
     <h2>Animation</h2>
+
     <div class="film-block">
       <p class="film-title">Deep End (2026)</p>
+
       <p class="film-desc">
         One summer in early-2000s China, a shy preteen girl confronts her fear of water — and human connection — when she forms an unexpected, magical bond in the deep end of the pool.
       </p>
     </div>
+
+
     <div class="video-wrap">
       <iframe
         src="https://www.youtube.com/embed/1JIyGr_uoHA"
@@ -34,40 +47,68 @@
         allowfullscreen>
       </iframe>
     </div>
-<div class="image-gallery">
-  <div class="gallery-main">
-    <img id="gallery-main-img" src="images/animation1.png" alt="Deep End">
-  </div>
 
-  <div class="gallery-thumbs">
-    <button class="gallery-thumb active" data-image="images/animation1.png">
-      <img src="images/animation1.png" alt="Deep End">
-    </button>
 
-    <button class="gallery-thumb" data-image="images/animation2.png">
-      <img src="images/animation2.png" alt="Deep End">
-    </button>
+    <!-- Deep End Image Gallery -->
 
-    <button class="gallery-thumb" data-image="images/animation3.png">
-      <img src="images/animation3.png" alt="Deep End">
-    </button>
+    <div class="image-gallery">
 
-    <button class="gallery-thumb" data-image="images/animation4.png">
-      <img src="images/animation4.png" alt="Deep End">
-    </button>
+      <div class="gallery-main">
+        <img
+          id="gallery-main-img"
+          src="images/animation1.png"
+          alt="Deep End">
+      </div>
 
-    <button class="gallery-thumb" data-image="images/animation5.png">
-      <img src="images/animation5.png" alt="Deep End">
-    </button>
+      <div class="gallery-thumbs">
 
-    <button class="gallery-thumb" data-image="images/animation6.png">
-      <img src="images/animation6.png" alt="Deep End">
-    </button>
-  </div>
-</div>
+        <button
+          class="gallery-thumb active"
+          data-image="images/animation1.png">
+          <img src="images/animation1.png" alt="Deep End">
+        </button>
+
+        <button
+          class="gallery-thumb"
+          data-image="images/animation2.png">
+          <img src="images/animation2.png" alt="Deep End">
+        </button>
+
+        <button
+          class="gallery-thumb"
+          data-image="images/animation3.png">
+          <img src="images/animation3.png" alt="Deep End">
+        </button>
+
+        <button
+          class="gallery-thumb"
+          data-image="images/animation4.png">
+          <img src="images/animation4.png" alt="Deep End">
+        </button>
+
+        <button
+          class="gallery-thumb"
+          data-image="images/animation5.png">
+          <img src="images/animation5.png" alt="Deep End">
+        </button>
+
+        <button
+          class="gallery-thumb"
+          data-image="images/animation6.png">
+          <img src="images/animation6.png" alt="Deep End">
+        </button>
+
+      </div>
+
+    </div>
+
+
+    <!-- Model Making -->
 
     <h2>Model Making</h2>
+
     <div class="model-grid">
+
       <img src="images/model1.jpg" alt="">
       <img src="images/model2.jpg" alt="">
       <img src="images/model3.jpg" alt="">
@@ -80,113 +121,318 @@
       <img src="images/model10.jpg" alt="">
       <img src="images/model11.jpg" alt="">
       <img src="images/model12.jpg" alt="">
+
     </div>
+
   </section>
 
+
   <!-- Lightbox -->
+
   <div class="lightbox" id="lightbox">
+
     <!-- 电脑端左右箭头 -->
-    <button class="lb-btn lb-prev desktop-only" id="lbPrev">&#8592;</button>
+
+    <button
+      class="lb-btn lb-prev desktop-only"
+      id="lbPrev">&#8592;</button>
+
     <img id="lightbox-img" alt="">
-    <button class="lb-btn lb-next desktop-only" id="lbNext">&#8594;</button>
+
+    <button
+      class="lb-btn lb-next desktop-only"
+      id="lbNext">&#8594;</button>
+
 
     <!-- 手机端底部箭头 -->
+
     <div class="lb-mobile-controls">
-      <button class="lb-btn-mobile" id="lbPrevMobile">&#8592;</button>
-      <button class="lb-btn-mobile" id="lbNextMobile">&#8594;</button>
+
+      <button
+        class="lb-btn-mobile"
+        id="lbPrevMobile">&#8592;</button>
+
+      <button
+        class="lb-btn-mobile"
+        id="lbNextMobile">&#8594;</button>
+
     </div>
+
   </div>
 
+
   <script>
+
+    /* =========================
+       Page Fade In
+    ========================= */
+
     window.addEventListener('load', function () {
+
       setTimeout(function () {
-        document.getElementById('pageContent').classList.add('visible');
+
+        document
+          .getElementById('pageContent')
+          .classList.add('visible');
+
       }, 100);
+
     });
 
-    const allImages = Array.from(document.querySelectorAll('.grid-2 img, .model-grid img'));
-    const lightbox = document.getElementById('lightbox');
-    const lightboxImg = document.getElementById('lightbox-img');
-    const lbPrev = document.getElementById('lbPrev');
-    const lbNext = document.getElementById('lbNext');
-    const lbPrevMobile = document.getElementById('lbPrevMobile');
-    const lbNextMobile = document.getElementById('lbNextMobile');
+
+    /* =========================
+       Deep End Gallery
+    ========================= */
+
+    const galleryMainImg =
+      document.getElementById("gallery-main-img");
+
+    const galleryThumbs =
+      document.querySelectorAll(".gallery-thumb");
+
+
+    if (galleryMainImg) {
+
+      galleryThumbs.forEach(thumb => {
+
+        thumb.addEventListener("click", function () {
+
+          const newImage = this.dataset.image;
+
+          galleryMainImg.style.opacity = "0";
+
+          setTimeout(() => {
+
+            galleryMainImg.src = newImage;
+
+            galleryMainImg.style.opacity = "1";
+
+          }, 150);
+
+
+          galleryThumbs.forEach(item => {
+
+            item.classList.remove("active");
+
+          });
+
+          this.classList.add("active");
+
+        });
+
+      });
+
+    }
+
+
+    /* =========================
+       Lightbox
+    ========================= */
+
+    const allImages = Array.from(
+      document.querySelectorAll(
+        '.gallery-main img, .model-grid img'
+      )
+    );
+
+
+    const lightbox =
+      document.getElementById('lightbox');
+
+    const lightboxImg =
+      document.getElementById('lightbox-img');
+
+    const lbPrev =
+      document.getElementById('lbPrev');
+
+    const lbNext =
+      document.getElementById('lbNext');
+
+    const lbPrevMobile =
+      document.getElementById('lbPrevMobile');
+
+    const lbNextMobile =
+      document.getElementById('lbNextMobile');
+
+
     let currentIndex = 0;
 
+
     function openLightbox(index) {
+
       currentIndex = index;
-      lightboxImg.src = allImages[currentIndex].src;
+
+      lightboxImg.src =
+        allImages[currentIndex].src;
+
       lightbox.style.display = 'flex';
+
       requestAnimationFrame(() => {
+
         requestAnimationFrame(() => {
+
           lightbox.classList.add('open');
+
         });
+
       });
+
     }
+
 
     function closeLightbox() {
+
       lightbox.classList.remove('open');
+
       setTimeout(() => {
+
         lightbox.style.display = 'none';
+
       }, 300);
+
     }
+
 
     function switchImage(newIndex) {
+
       lightboxImg.style.opacity = '0';
-      lightboxImg.style.transform = 'scale(0.97)';
+
+      lightboxImg.style.transform =
+        'scale(0.97)';
+
+
       setTimeout(() => {
+
         currentIndex = newIndex;
-        lightboxImg.src = allImages[currentIndex].src;
+
+        lightboxImg.src =
+          allImages[currentIndex].src;
+
         lightboxImg.style.opacity = '1';
-        lightboxImg.style.transform = 'scale(1)';
+
+        lightboxImg.style.transform =
+          'scale(1)';
+
       }, 200);
+
     }
+
 
     function showPrev() {
-      switchImage((currentIndex - 1 + allImages.length) % allImages.length);
+
+      switchImage(
+        (currentIndex - 1 + allImages.length)
+        % allImages.length
+      );
+
     }
+
 
     function showNext() {
-      switchImage((currentIndex + 1) % allImages.length);
+
+      switchImage(
+        (currentIndex + 1)
+        % allImages.length
+      );
+
     }
 
+
+    /* 点击大图 / Model Making 图片 */
+
     allImages.forEach((img, index) => {
-      img.addEventListener('click', () => openLightbox(index));
+
+      img.addEventListener('click', () => {
+
+        openLightbox(index);
+
+      });
+
     });
+
+
+    /* 点击 Lightbox 背景关闭 */
 
     lightbox.addEventListener('click', (e) => {
+
       if (e.target === lightbox) {
+
         closeLightbox();
+
       }
+
     });
+
+
+    /* 电脑端左右按钮 */
 
     lbPrev.addEventListener('click', (e) => {
+
       e.stopPropagation();
+
       showPrev();
+
     });
+
 
     lbNext.addEventListener('click', (e) => {
+
       e.stopPropagation();
+
       showNext();
+
     });
+
+
+    /* 手机端左右按钮 */
 
     lbPrevMobile.addEventListener('click', (e) => {
+
       e.stopPropagation();
+
       showPrev();
+
     });
+
 
     lbNextMobile.addEventListener('click', (e) => {
+
       e.stopPropagation();
+
       showNext();
+
     });
 
+
+    /* 键盘操作 */
+
     document.addEventListener('keydown', (e) => {
+
       if (lightbox.style.display === 'flex') {
-        if (e.key === 'ArrowLeft') showPrev();
-        if (e.key === 'ArrowRight') showNext();
-        if (e.key === 'Escape') closeLightbox();
+
+        if (e.key === 'ArrowLeft') {
+
+          showPrev();
+
+        }
+
+        if (e.key === 'ArrowRight') {
+
+          showNext();
+
+        }
+
+        if (e.key === 'Escape') {
+
+          closeLightbox();
+
+        }
+
       }
+
     });
+
   </script>
+
 </body>
 </html>
