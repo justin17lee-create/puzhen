@@ -610,3 +610,58 @@ a {
 .gallery-arrow-right {
   right: 0;
 }
+
+@media (max-width: 768px) {
+
+  /* 手机端 Portfolio Gallery */
+  .image-gallery {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    max-width: none;
+    margin: 30px auto 0;
+    gap: 12px;
+  }
+
+  .gallery-main {
+    width: 100%;
+    height: auto;
+    aspect-ratio: 1.85 / 1;
+    overflow: hidden;
+  }
+
+  .gallery-main img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+
+  .gallery-thumbs {
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+    gap: 8px;
+    width: 100%;
+    height: auto;
+    overflow-x: auto;
+  }
+
+  .gallery-thumb {
+    width: 60px;
+    min-width: 60px;
+    height: 60px;
+    aspect-ratio: 1 / 1;
+  }
+
+  .gallery-thumb img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+
+  .gallery-arrow {
+    width: 36px;
+    height: 55px;
+    font-size: 20px;
+  }
+}
