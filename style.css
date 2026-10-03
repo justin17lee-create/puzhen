@@ -80,12 +80,19 @@ html {
 }
 
 .hero-content {
-  position: relative;
+  position: absolute;
+  top: 30%;
+  left: 50%;
+  transform: translate(-50%, calc(-50% + 30px));
   z-index: 1;
   text-align: center;
   opacity: 0;
-  transform: translateY(30px);
   transition: opacity 0.5s ease, transform 0.5s ease;
+}
+
+.hero-content.visible {
+  opacity: 1;
+  transform: translate(-50%, -50%);
 }
 
 .hero-content.visible {
