@@ -469,6 +469,9 @@ a {
   aspect-ratio: 1.85 / 1;
   overflow: hidden;
   position: relative;
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  box-shadow: 0 8px 30px rgba(0, 0, 0, 0.18);
+  box-sizing: border-box;
 }
 
 .gallery-main img {
