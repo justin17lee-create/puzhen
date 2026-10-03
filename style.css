@@ -453,6 +453,7 @@ a {
   }
 }
 
+/* IMAGE GALLERY */
 .image-gallery {
   display: grid;
   grid-template-columns: 1080px 87px;
@@ -460,12 +461,14 @@ a {
   width: 100%;
   max-width: 1183px;
   margin: 30px auto 0;
+  align-items: stretch;
 }
 
 .gallery-main {
   width: 100%;
   aspect-ratio: 1.85 / 1;
   overflow: hidden;
+  position: relative;
 }
 
 .gallery-main img {
@@ -479,12 +482,15 @@ a {
 .gallery-thumbs {
   display: flex;
   flex-direction: column;
-  gap: 12px;
+  justify-content: space-between;
+  gap: 0;
+  height: 100%;
 }
 
 .gallery-thumb {
   width: 87px;
-  height: 87px;
+  aspect-ratio: 1 / 1;
+  height: auto;
   padding: 0;
   border: none;
   background: none;
@@ -512,10 +518,6 @@ a {
 .gallery-thumb.active img {
   outline: 2px solid currentColor;
   outline-offset: -2px;
-}
-
-.gallery-main {
-  position: relative;
 }
 
 .gallery-arrow {
