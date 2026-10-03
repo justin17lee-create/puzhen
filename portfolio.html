@@ -297,11 +297,19 @@
        Lightbox
     ========================= */
 
-    const allImages = Array.from(
-      document.querySelectorAll(
-        '.gallery-main img, .model-grid img'
-      )
-    );
+    const deepEndImages = [
+      'images/animation1.png',
+      'images/animation2.png',
+      'images/animation3.png',
+      'images/animation4.png',
+      'images/animation5.png',
+      'images/animation6.png'
+    ];
+
+
+    const modelImages = Array.from(
+      document.querySelectorAll('.model-grid img')
+    ).map(img => img.src);
 
 
     const lightbox =
@@ -323,15 +331,18 @@
       document.getElementById('lbNextMobile');
 
 
+    let currentLightboxImages = [];
     let currentIndex = 0;
 
 
-    function openLightbox(index) {
+    function openLightbox(images, index) {
+
+      currentLightboxImages = images;
 
       currentIndex = index;
 
       lightboxImg.src =
-        allImages[currentIndex].src;
+        currentLightboxImages[currentIndex];
 
       lightbox.style.display = 'flex';
 
@@ -374,7 +385,7 @@
         currentIndex = newIndex;
 
         lightboxImg.src =
-          allImages[currentIndex].src;
+          currentLightboxImages[currentIndex];
 
         lightboxImg.style.opacity = '1';
 
@@ -389,8 +400,8 @@
     function showPrev() {
 
       switchImage(
-        (currentIndex - 1 + allImages.length)
-        % allImages.length
+        (currentIndex - 1 + currentLightboxImages.length)
+        % currentLightboxImages.length
       );
 
     }
@@ -400,22 +411,43 @@
 
       switchImage(
         (currentIndex + 1)
-        % allImages.length
+        % currentLightboxImages.length
       );
 
     }
 
 
-    allImages.forEach((img, index) => {
+    /* 点击 Deep End 大图 */
 
-      img.addEventListener('click', () => {
+    galleryMainImg.addEventListener('click', () => {
 
-        openLightbox(index);
-
-      });
+      openLightbox(
+        deepEndImages,
+        currentGalleryIndex
+      );
 
     });
 
+
+    /* 点击 Model Making 图片 */
+
+    document
+      .querySelectorAll('.model-grid img')
+      .forEach((img, index) => {
+
+        img.addEventListener('click', () => {
+
+          openLightbox(
+            modelImages,
+            index
+          );
+
+        });
+
+      });
+
+
+    /* 点击 Lightbox 背景关闭 */
 
     lightbox.addEventListener('click', (e) => {
 
@@ -427,6 +459,8 @@
 
     });
 
+
+    /* 电脑端左右按钮 */
 
     lbPrev.addEventListener('click', (e) => {
 
@@ -446,6 +480,8 @@
     });
 
 
+    /* 手机端左右按钮 */
+
     lbPrevMobile.addEventListener('click', (e) => {
 
       e.stopPropagation();
@@ -463,6 +499,8 @@
 
     });
 
+
+    /* 键盘 */
 
     document.addEventListener('keydown', (e) => {
 
