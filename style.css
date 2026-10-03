@@ -433,17 +433,20 @@ a {
   }
 }
 
+/* DEEP END GALLERY */
 .image-gallery {
   display: grid;
-  grid-template-columns: minmax(0, 1fr) 110px;
+  grid-template-columns: minmax(0, 0.85fr) 110px;
   gap: 16px;
   width: 100%;
-  margin-top: 30px;
+  max-width: 900px;
+  margin: 30px auto 0;
+  align-items: start;
 }
 
 .gallery-main {
   width: 100%;
-  aspect-ratio: 16 / 10;
+  height: 720px;
   overflow: hidden;
 }
 
@@ -452,6 +455,7 @@ a {
   height: 100%;
   object-fit: cover;
   display: block;
+  cursor: pointer;
   transition: opacity 0.25s ease;
 }
 
@@ -462,7 +466,8 @@ a {
 }
 
 .gallery-thumb {
-  width: 100%;
+  width: 110px;
+  height: 110px;
   aspect-ratio: 1 / 1;
   padding: 0;
   border: none;
