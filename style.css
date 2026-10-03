@@ -589,7 +589,7 @@ a {
   right: 0;
 }
 
-/* MOBILE PORTFOLIO GALLERY */
+/* MOBILE PORTFOLIO GALLERY 
 @media screen and (max-width: 768px) {
 
   .portfolio {
@@ -647,4 +647,4 @@ a {
     flex: 0 0 60px !important;
   }
 
-}
+} */
